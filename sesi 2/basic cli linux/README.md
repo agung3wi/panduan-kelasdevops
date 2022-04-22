@@ -1,4 +1,4 @@
-Baic CLI di Linux
+Basic CLI di Linux
 ======================
 
 Berikut adalah command-command yang penting di linux untuk dipelajari
