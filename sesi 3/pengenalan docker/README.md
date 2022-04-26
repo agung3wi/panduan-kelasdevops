@@ -63,7 +63,26 @@ Catatan :
 ## Install Docker dari Command Line
 
 1. Setelah mengunduh file `Docker Desktop Installer.exe`, jalankan perintah berikut di command line windows anda :
+   
    ```
    start /w "" "Docker Desktop Installer.exe" install
    ```
 
+# Inisiasi Docker
+
+Jika Docker sudah berhasil terinstall, silahkan ikuti langkah - langkah berikut :
+
+1. Siapkan instance di Amazon Web Services (AWS) Layanan EC2
+   > Jika sudah memiliki instance free tier, disarankan terlebih dahulu di berhentikan `Stop Instance` kemudian baru buat instance baru.
+
+2. Selanjutnya membuat `Key pairs` baru. (Jika sebelumnya sudah memiliki private key dan public key di local)
+   - Masuk menu Key pair
+   - Pilih dropdown `Actions` di bagian kanan atas, kemudian akan muncul jendela `Import key pair`
+
+3. Isikan nama, dan paste kan public key yang anda miliki ke text box yang tersedia
+   - Cara mengecek public key yang dimiliki, silahkan ketik line code berikut ke command prompt :
+   
+     ```
+     cat ~/.ssh/id_rsa.pub
+     ```
+4. 
