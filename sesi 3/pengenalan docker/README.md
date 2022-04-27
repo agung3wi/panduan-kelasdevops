@@ -68,36 +68,9 @@ Docker adalah platform perangkat lunak yang memungkinkan Anda membuat, menguji, 
    start /w "" "Docker Desktop Installer.exe" install
    ```
 
-# Inisiasi Docker
+## Install Docker Engine di Ubuntu
 
-Jika Docker sudah berhasil terinstall, silahkan ikuti langkah - langkah berikut :
-> Kita perlu menyiapkan instance di Amazon Web Service (AWS) Layanan EC2 dan `Key pairs` baru.
-
-## Membuat Key pair baru
-
-1. Masuk/ Login ke alamat web [Amazon Web Services (AWS)](https://signin.aws.amazon.com/), kemudian menuju ke Layanan EC2. Masuk ke menu **Key pair**
-
-2. Selanjutnya membuat `Key pairs` baru. (Jika sebelumnya sudah memiliki private key dan public key di local)
-   - Masuk menu Key pair
-   - Pilih dropdown `Actions` di bagian kanan atas, kemudian akan muncul jendela `Import key pair`
-
-3. Isikan nama, dan paste kan public key yang anda miliki ke text box yang tersedia
-   - Cara mengecek public key yang dimiliki, silahkan ketik line code berikut ke command prompt :
-   
-     ```
-     cat ~/.ssh/id_rsa.pub
-     ```
-4. Klik tombol `Import Key Pair`
-
-## Membuat instance baru
-
-1. Masuk/ Login ke alamat web [Amazon Web Services (AWS)](https://signin.aws.amazon.com/), kemudian menuju ke Layanan EC2. Masuk ke menu **Instances**
-   > Jika sudah memiliki instance free tier, disarankan terlebih dahulu di berhentikan instance yang sedang aktif dengan menekan tombol `Stop Instance` kemudian baru buat instance baru.
-
-2. Buat instance baru. Lakukan langkah pembuatan instance seperti pada pertemuan pertama. 
-   > Jika sudah sampai ke **Langkah 7 : Review Instance Launch**, ketika akan `Launch Instance` silahkan pilih `Choose an existing key pair` dan pilih key pair yang sudah dibuat sebelumnya
-
-## Login dengan SSH di Terminal/ Command Prompt
+* [Referensi Instal Docker Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 
 1. Setelah instance Launch, copy IPv4 didalam detail instance untuk melakukan login menggunakan SSH
 2. Ketikan perintah berikut untuk melakukan login dengan SSH
@@ -105,3 +78,125 @@ Jika Docker sudah berhasil terinstall, silahkan ikuti langkah - langkah berikut 
    ssh ubuntu@13.213.58.47
    ```
    > untuk `13.213.58.47` bisa disesuaikan dengan IPv4 yang anda miliki
+
+3. Selanjutnya kita akan menginstal Docker Engine di Ubuntu.
+
+### Setup repositori
+
+1. Langkah pertama, wajib melakukan `apt update`
+   ```
+   sudo apt-get update
+   ```
+   Kemudian perintah berikut :
+   ```
+   sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+   ```
+2. Selanjutnya menambahkan GPG key resmi Docker
+   ```
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+   ```
+3. Dilanjutkan menambahkan sources Docker list
+   ```
+   echo \
+   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   ```
+   
+### Instal Docker Engine
+
+1. Langkah awal, perlu dilakukan pembaruan indeks paket apt, dan instal versi terbaru Docker Engine, containerd, dan Docker Compose
+   ```
+   sudo apt-get update
+   ```
+   Kemudian install dengan perintah berikut :
+   ```
+   sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+   ```
+2. Atau jika ingin menginstal versi spesifik Docker Engine, bisa menggunakan perintah berikut :
+   - Pertama lakukan list versi yang sudah tersedia di repo anda
+   ```
+   apt-cache madison docker-ce
+   ```
+   - Selanjutnya instal versi spesifik dari Docker Engine yang diinginkan. Contoh `5:18.09.1~3-0~ubuntu-xenial`
+   ```
+   sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io docker-compose-plugin
+   ```
+3. Untuk mengecek versi dan build dari Docker Engine :
+   ```
+   docker -v
+   ```
+4. Kemudian menampilkan semua kontainer yang sedang berjalan dengan perintah berikut :
+   ```
+   docker ps -a
+   ```
+   Jika menemukan **error** `permission denied` seperti line ini :
+   > Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker .sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json?all=1": dial unix /var/run/dock er.sock: connect: permission denied
+   
+   Maka langsung saja akses melalui root dengan perintah berikut :
+   ```
+   sudo su
+   ```
+
+# Command Line Docker
+Berikut adalah beberapa command line yang ada di Docker
+
+### 1. Perintah untuk mengetahui daftar dari kontainer yang ada di dalam Docker
+- Untuk mengecek hanya kontainer yang aktif
+  ```
+  docker ps
+  ```
+- Untuk mengecek semua kontainer yang ada di dalam Docker
+  ```
+  docker ps -a
+  ```
+### 2. Perintah untuk mengetahui daftar image yang telah di pull (local)
+```
+docker images
+```
+### 3. Perintah untuk menghapus salah satu container di dalam Docker
+```
+docker rm <container_id>
+```
+### 4. Perintah untuk menghapus container yang sedang berjalan/ running
+```
+docker rm <container_id> --force
+```
+### 5. Perintah untuk menjalankan kembali container
+```
+docker restart <container_id>
+```
+
+## Memulai dengan Docker
+* [Dokumentasi resmi Docker](https://docs.docker.com/get-started/)
+
+1. Setelah mengenal beberapa command line docker, langkah awal selanjutnya adalah mencoba memasukan 1 image kedalam docker yang ada
+   ```
+   docker run -d -p 80:80 docker/getting-started
+   ```
+   Kemudian cek apakah image sudah masuk kedalam docker dengan `docker ps` dan `docker image`
+2. Jalankan perintah berikut untuk memunculkan IPv4 yang digunakan
+   ```
+   curl ip.me
+   ```
+   Selanjutnya salin IPv4 yang muncul ke browser, maka akan muncul halaman `Getting started`
+   
+# Docker Compose
+Docker compose maksudnya adalah kita dapat menjalankan 1 docker dengan multicontainer akan kita config dalam 1 file 
+* [Template Docker Compose](https://github.com/agung3wi/docker-compose-template)
+
+### Perintah untuk menjalankan Docker setelah memiliki template Docker Compose
+- Jika memiliki file spesifik dengan nama `docker-compose.yml`
+```
+docker-compose up -d
+```
+- Jika memiliki nama file spesifik lain
+```
+docker-compose -f <nama_file.yml> up -d
+```
+
+
+`end of Session 3`
