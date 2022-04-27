@@ -1,7 +1,7 @@
 # Sesi 3 - Pengenalan Docker
 
 Pada sesi kali ini kita akan membahas beberapa materi, diantaranya :
-1. Mengenal Docker
+1. Pengenalan Docker
 2. Install docker di komputer
 3. Basic CLI untuk docker
 4. Expose port & mounting
