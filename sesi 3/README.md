@@ -1,4 +1,4 @@
-# Sesi 3 - Pengenalan Docker
+# Sesi 3 - Docker
 
 Pada sesi kali ini kita akan membahas beberapa materi, diantaranya :
 1. Pengenalan Docker
