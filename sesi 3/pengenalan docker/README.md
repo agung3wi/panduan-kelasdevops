@@ -185,7 +185,7 @@ docker restart <container_id>
    Selanjutnya salin IPv4 yang muncul ke browser, maka akan muncul halaman `Getting started`
    
 # Docker Compose
-Docker compose maksudnya adalah kita dapat menjalankan 1 docker dengan multicontainer akan kita config dalam 1 file 
+Docker compose maksudnya adalah kita dapat menjalankan 1 docker dengan multicontainer yang akan kita config kedalam 1 file 
 * [Template Docker Compose](https://github.com/agung3wi/docker-compose-template)
 
 ### Perintah untuk menjalankan Docker setelah memiliki template Docker Compose
