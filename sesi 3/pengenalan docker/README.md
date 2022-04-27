@@ -39,7 +39,7 @@ Docker adalah platform perangkat lunak yang memungkinkan Anda membuat, menguji, 
   - RAM sistem 4GB
   - Dukungan virtualisasi perangkat keras tingkat BIOS harus diaktifkan di pengaturan BIOS
 
-Catatan :
+### Catatan :
 > Docker hanya mendukung Docker Desktop di Windows untuk versi Windows 10 yang masih dalam garis waktu servis Microsoft.
 
 # Install Docker
@@ -71,9 +71,11 @@ Catatan :
 # Inisiasi Docker
 
 Jika Docker sudah berhasil terinstall, silahkan ikuti langkah - langkah berikut :
+> Kita perlu menyiapkan instance di Amazon Web Service (AWS) Layanan EC2 dan `Key pairs` baru.
 
-1. Siapkan instance di Amazon Web Services (AWS) Layanan EC2
-   > Jika sudah memiliki instance free tier, disarankan terlebih dahulu di berhentikan `Stop Instance` kemudian baru buat instance baru.
+## Membuat Key pair baru
+
+1. Masuk/ Login ke alamat web [Amazon Web Services (AWS)](https://signin.aws.amazon.com/), kemudian menuju ke Layanan EC2. Masuk ke menu **Key pair**
 
 2. Selanjutnya membuat `Key pairs` baru. (Jika sebelumnya sudah memiliki private key dan public key di local)
    - Masuk menu Key pair
@@ -85,4 +87,21 @@ Jika Docker sudah berhasil terinstall, silahkan ikuti langkah - langkah berikut 
      ```
      cat ~/.ssh/id_rsa.pub
      ```
-4. 
+4. Klik tombol `Import Key Pair`
+
+## Membuat instance baru
+
+1. Masuk/ Login ke alamat web [Amazon Web Services (AWS)](https://signin.aws.amazon.com/), kemudian menuju ke Layanan EC2. Masuk ke menu **Instances**
+   > Jika sudah memiliki instance free tier, disarankan terlebih dahulu di berhentikan instance yang sedang aktif dengan menekan tombol `Stop Instance` kemudian baru buat instance baru.
+
+2. Buat instance baru. Lakukan langkah pembuatan instance seperti pada pertemuan pertama. 
+   > Jika sudah sampai ke **Langkah 7 : Review Instance Launch**, ketika akan `Launch Instance` silahkan pilih `Choose an existing key pair` dan pilih key pair yang sudah dibuat sebelumnya
+
+## Login dengan SSH di Terminal/ Command Prompt
+
+1. Setelah instance Launch, copy IPv4 didalam detail instance untuk melakukan login menggunakan SSH
+2. Ketikan perintah berikut untuk melakukan login dengan SSH
+   ```
+   ssh ubuntu@13.213.58.47
+   ```
+   > untuk `13.213.58.47` bisa disesuaikan dengan IPv4 yang anda miliki
