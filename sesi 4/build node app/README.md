@@ -33,7 +33,7 @@
      ```
  3. Setelah login, kita lakukan push dengan perintah :
      ```
-     docker push <username_docker_hub>/<image_name>:<tag_name>
+     docker push <username_docker_hub>/node-app:v1 .
      ```
  4. Perintah menjalankan image docker melalui docker hub
      ```
