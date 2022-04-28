@@ -66,3 +66,7 @@
      ```
      docker push <image_name>:<tag>
      ```
+  5. Perintah menjalankan image docker melalui docker hub
+     ```
+     docker run --name <container_name> -p 80:80 -d <image_name>:<tag>
+     ```
