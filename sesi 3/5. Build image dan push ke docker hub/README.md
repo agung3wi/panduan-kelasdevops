@@ -64,13 +64,13 @@
      Kemudian masukan username dan password
  4. Setelah login, kita lakukan push dengan perintah :
      ```
-     docker push <image_name>:<tag>
+     docker push <username_docker_hub>/<image_name>:<tag_name>
      ```
  5. Perintah menjalankan image docker melalui docker hub
      ```
-     docker run --name <container_name> -p 80:80 -d <image_name>:<tag>
+     docker run --name <container_name> -p 80:80 -d <username_docker_hub>/<image_name>:<tag_name>
      ```
  6. Perintah jika ingin docker restart tiap saat
      ```
-     docker run --name <container_name> -p 80:80 -d --restart always <image_name>:<tag>
+     docker run --name <container_name> -p 80:80 -d --restart always <username_docker_hub>/<image_name>:<tag_name>
      ```
