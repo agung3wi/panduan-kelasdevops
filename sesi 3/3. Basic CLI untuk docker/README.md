@@ -31,3 +31,11 @@ docker rm <container_id> --force
 ```
 docker restart <container_id>
 ```
+### 6. Perintah untuk melihat content container menggunakan bash
+```
+docker exec -it <container_name> bash
+```
+atau
+```
+docker exec -it <container_id> bash
+```
