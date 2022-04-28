@@ -44,11 +44,11 @@
 
 * [Halaman Docker Hub](https://hub.docker.com/)
 
-  1. Cek Image yang telah kita buat
+ 1. Cek Image yang telah kita buat
      ```
      docker image
      ```
-  2. Tambahkan tag kedalam Docker image
+ 2. Tambahkan tag kedalam Docker image
      ```
      docker tag <image_name> <username_docker_hub>/<image_name>:<tag_name>
      ```
@@ -56,17 +56,21 @@
      ```
      docker build -t <username_docker_hub>/<image_name>:<tag_name> .
      ```
-  3. Sebelum melakukan push, terlebih dahulu melakukan Login ke Docker hub
+ 3. Sebelum melakukan push, terlebih dahulu melakukan Login ke Docker hub
      > jika belum terdaftar bisa melakukan registrasi ke halaman [Docker hub](https://hub.docker.com/) dengan memasukan Docker ID, Email, dan Password
      ```
      docker login 
      ```
      Kemudian masukan username dan password
-  4. Setelah login, kita lakukan push dengan perintah :
+ 4. Setelah login, kita lakukan push dengan perintah :
      ```
      docker push <image_name>:<tag>
      ```
-  5. Perintah menjalankan image docker melalui docker hub
+ 5. Perintah menjalankan image docker melalui docker hub
      ```
      docker run --name <container_name> -p 80:80 -d <image_name>:<tag>
+     ```
+ 6. Perintah jika ingin docker restart tiap saat
+     ```
+     docker run --name <container_name> -p 80:80 -d --restart always <image_name>:<tag>
      ```
