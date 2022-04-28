@@ -4,7 +4,7 @@
 
   1. Build docker image dengan perintah berikut
      ```
-     docker build -t go-app .
+     docker build -t reactjs-app .
      ```
   6. Jika sudah berhasil ter-build, kita cek imagenya
      ```
@@ -12,7 +12,7 @@
      ```
   7. Selanjutnya run docker image yang sudah dibuat dari lokal
      ```
-     docker run --name go-app -p 80:80 go-app
+     docker run --name reactjs-app -p 80:80 reactjs-app
      ```
      
 ## Push ke Docker Hub
@@ -25,11 +25,11 @@
      ```
  2. Tambahkan tag kedalam Docker image
      ```
-     docker tag go-app <username_docker_hub>/go-app:v1
+     docker tag reactjs-app <username_docker_hub>/reactjs-app:v1
      ```
      atau bisa ditambahkan saat proses build docker image secara langsung
      ```
-     docker build -t <username_docker_hub>/go-app:v1 .
+     docker build -t <username_docker_hub>/reactjs-app:v1 .
      ```
  3. Setelah login, kita lakukan push dengan perintah :
      ```
@@ -37,5 +37,5 @@
      ```
  4. Perintah menjalankan image docker melalui docker hub
      ```
-     docker run --name go-app -p 80:80 -d <username_docker_hub>/go-app:v1
+     docker run --name reactjs-app -p 80:80 -d <username_docker_hub>/reactjs-app:v1
      ```
