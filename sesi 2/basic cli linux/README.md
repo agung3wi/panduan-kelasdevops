@@ -146,4 +146,4 @@ Command untuk menampilkan perintah yang digunakan sebelumnya.
 
 ---
 
-Referensi commmand lainnya dapat dilihat [disini](https://hackr.io/blog/basic-linux-commands)
+### **Referensi commmand lainnya dapat dilihat [disini](https://hackr.io/blog/basic-linux-commands)**
