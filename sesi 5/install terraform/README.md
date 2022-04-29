@@ -1,4 +1,7 @@
-# Install Terraform
+# Mengenal & Installasi Terraform
+
+Terraform dikembangkan oleh HashiCorp yang merupakan tools infrastruktur as a code sebagai alat yang memungkinkan untuk membuat, mengubah, dan meningkatkan infrastuktur dengan aman dan dapat diprediksi. Terraform dikembangkan dalam bahasa Go.
+Terraform mendukung provision di berbagai provider cloud yang besar seperti AWS, GCP, Azure, bahkan DigitalOcean.
 
 Referensi [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli).
 
@@ -7,7 +10,11 @@ Referensi [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/in
 Di Windows, install terraform bisa dilakukan dengan choco, Jika kita sudah menginstall
 [Chocolatey](https://chocolatey.org/).
 
-Jika anda belum menginstall, maka terlebih dahulu install choco. Installasi Choco dapat dilakukan dengan cara berikut:
+```
+choco install terraform
+```
+
+Jika anda belum menginstall chocolatey, maka terlebih dahulu install chocolatey. Installasi Choco dapat dilakukan dengan cara berikut:
 
 1. Buka CMD dengan Run sebagai Administrator.
 2. Ketikan command berikut
