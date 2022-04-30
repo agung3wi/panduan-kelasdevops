@@ -57,6 +57,18 @@ Jika sudah lakukan pengetesan ssh dengan user kalian. Coba masuk ke ssh kalian
 ssh username@host
 ```
 
+## Install Composer di Ubuntu
+Install composer terlebih dahulu apabila belum tersedia. Untuk menginstall composer di ubuntu, tutorial lengkap dapat dilihat [disini](https://getcomposer.org/download/)
+```
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === '55ce33d7678c5a611085589f1f3ddf8b3c52d662cd01d4ba75c0ee0459970c2200a51f492d557530c71c15d8dba01eae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+```
+```
+sudo mv composer.phar /usr/local/bin/composer
+```
+
 
 ## Deploy Manual menggunakan Rsync
 
@@ -66,7 +78,32 @@ rsync -avz ./ celine@domain_kamu.xyz:/var/www/domain_kamu/public
 ```
 > Bagi pengguna windows harus menginstal rsync terlebih dahulu, sedangkan di ubuntu sudah ada.
 
+Tambahkan script berikut ke konfigurasi sites-enabled. Penjelasan lebih lanjut bisa dilihat [disini](https://laravel.com/docs/9.x/deployment#nginx)
+```
+location / {
+    try_files $uri $uri/ /index.php?$query_string;
+}
+```
 
-Apabila mengalami kendala seperti gambar ini :
-![image](https://user-images.githubusercontent.com/68054503/166107548-4a511a80-7cce-4c80-880d-fba2d37634ff.png)
+
+Masuk ke direktori project di server
+```
+composer install
+php artisan migrate
+```
+
+### Membuat script deploy.sh
+Urutan script deploy.sh
+1. script rsync
+2. script composer install
+
+Atur hak akses file deploy.sh
+```
+chmod +x deploy.sh
+```
+
+
+
+
+
 
