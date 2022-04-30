@@ -17,7 +17,7 @@ sudo apt install npm
 ### Buat folder untuk project nodejs
 1. Buat folder untuk project nodejs
 ```
-mkdir folder_name
+mkdir nodejs.kelasdevops.xyz
 ```
 2. Masuk ke folder tersebut, lalu buat file .env
 ```
@@ -94,7 +94,7 @@ Tambahkan script berikut :
 ```
 [program:nodejs]
 user=agung
-command=node /home/agung/nodejs/server.js
+command=node /home/agung/nodejs.kelasdevops.xyz/server.js
 autostart=true
 autorestart=true
 stderr_logfile=/var/log/idle.err.log
@@ -111,4 +111,29 @@ sudo supervisorctl update
 ```
 sudo supervisorctl start nodejs
 ```
+
+11. Buat konfigurasi di **/etc/nginx/sites-enabled/** untuk project nodejs
+```
+server {
+        root /home/agung/nodejs/public;
+        server_name nodejs.kelasdevops.xyz;
+
+        location / {
+          proxy_pass http://127.0.0.1:3000;
+
+          proxy_set_header Upgrade           $http_upgrade;
+          proxy_set_header Connection        "upgrade";
+          proxy_set_header Host              $host;
+          proxy_set_header X-Real-IP         $remote_addr;
+          proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+          proxy_set_header X-Forwarded-Proto $scheme;
+          proxy_set_header X-Forwarded-Host  $host;
+          proxy_set_header X-Forwarded-Port  $server_port;
+        }
+
+        listen [::]:80;
+}
+```
+
+12. Tambahkan DNS record  
 
