@@ -67,4 +67,5 @@ rsync -avz ./ celine@domain_kamu.xyz:/var/www/domain_kamu/public
 > Bagi pengguna windows harus menginstal rsync terlebih dahulu, sedangkan di ubuntu sudah ada.
 
 Apabila mengalami kendala seperti gambar dibawah ini :
+![image](https://user-images.githubusercontent.com/68054503/166107548-4a511a80-7cce-4c80-880d-fba2d37634ff.png)
 
