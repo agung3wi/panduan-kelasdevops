@@ -2,7 +2,7 @@ Automation Test
 ========================
 
 Materi yang akan dipelajari pada sesi ini sebagai berikut:
-1. [Mengenal Automation Test](https://github.com/agung3wi/panduan-kelasdevops/tree/master/sesi%202/1.%20basic%20cli%20linux)
-2. [Unit Test](https://github.com/agung3wi/panduan-kelasdevops/tree/master/sesi%202/2.%20Install%20%26%20konfigurasi%20webserver)
-3. [Integration Test](https://github.com/agung3wi/panduan-kelasdevops/tree/master/sesi%202/3.%20Konfigurasi%20DNS%20server)
-3. [Implementasi Automation Test On CI](https://github.com/agung3wi/panduan-kelasdevops/tree/master/sesi%202/3.%20Konfigurasi%20DNS%20server)
+1. [Mengenal Automation Test](https://github.com/agung3wi/panduan-kelasdevops/tree/master/sesi%208/1.%20Mengenal%20Automation%20Test)
+2. [Unit Test](https://github.com/agung3wi/panduan-kelasdevops/tree/master/sesi%208/2.%20Unit%20Test)
+3. [Integration Test](https://github.com/agung3wi/panduan-kelasdevops/tree/master/sesi%208/3.%20Integration%20Test)
+4. [Implementasi Automation Test On CI](https://github.com/agung3wi/panduan-kelasdevops/tree/master/sesi%208/4.%20Implementasi%20Automation%20Test%20On%20CI)
