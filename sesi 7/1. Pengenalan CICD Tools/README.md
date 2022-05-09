@@ -21,11 +21,11 @@ Dengan meningkatnya untuk mengadopsi praktik agile, beberapa tools CI/CD telah b
 
 ## Macam - macam CI/CD yang biasa digunakan :
 
-### Gitlab CI
+1. Gitlab CI
 Gitlab CI merupakan CI tools yang khusus dibuat oleh gitlab yang sangat mudah. Untuk menjalankan gitlab CI hanya butuh membuat file .gitlab-ci.yml.
 
-### Jenkins
+2. Jenkins
 Diklasifikasikan di antara tools CI/CD terbaik yang tersedia saat ini, Jenkins adalah tools berbasis open source, lintas platform, dan berbasis Java yang memungkinkan pengguna untuk menguji dan melaporkan secara real time.
 
-### Github Action
+3. Github Action
 Seperti gitlab CI, github action juga merupakan CI/CD tools bawaan dari github. 
