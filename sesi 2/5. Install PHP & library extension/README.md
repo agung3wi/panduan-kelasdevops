@@ -9,7 +9,7 @@
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
 ```
-> Bagi yang menggunakan vps aws, bisa melewati step ini (menambah repository).
+> Kadang-kadang bisa melewati step ini (menambah repository).
 
 3. Install php 7.4
 ```
