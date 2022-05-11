@@ -113,4 +113,25 @@
 ## Konfigurasi Jenkins
 
 1. Masuk ke menu `Manage Jenkins` pada side menu sebelah kiri
+   
+   <img width="180" alt="Screen Shot 2022-05-11 at 14 35 59" src="https://user-images.githubusercontent.com/38523284/167794538-543f42ce-9ade-449c-9535-a9ff9d4b2bb7.png">
+
 2. Kemudian klik `Manage Plugins`, di Plugin Manager pilih filter ke Available
+   
+   <img width="300" alt="Screen Shot 2022-05-11 at 14 37 02" src="https://user-images.githubusercontent.com/38523284/167794729-9c990e89-ab3b-4493-9ccf-113764fc2db0.png"> 
+   <img width="350" alt="Screen Shot 2022-05-11 at 14 37 11" src="https://user-images.githubusercontent.com/38523284/167794765-44737d25-b552-4755-ab04-848b68250bf9.png">
+
+3. Pertama, install plugin `ssh agent`, checklis pada plugnin nya dan klik tombol `install without restart`
+   > fungsi dari `ssh agent` untuk memudahkan melakukan ssh ke suatu server
+   
+   <img width="1153" alt="Screen Shot 2022-05-11 at 14 40 54" src="https://user-images.githubusercontent.com/38523284/167795370-632d75ee-9f50-40ca-bea5-a84044358ed0.png">
+
+4. Kedua, install plugin `Generic Webhook Trigger`
+   > fungsi dari `Generic Webhook Trigger` untuk memudahkan menjalankan jenkins hanya dengan 1 triger
+   
+   <img width="1152" alt="Screen Shot 2022-05-11 at 14 43 40" src="https://user-images.githubusercontent.com/38523284/167796221-526e0767-c439-4867-b178-5536dd52bb62.png">
+
+5. Ketiga, install plugin `Environmental Injector`
+   > fungsi dari `Environmental Injector` untuk memudahkan dalam menambah environment didalam jenkins
+
+   <img width="1138" alt="Screen Shot 2022-05-11 at 14 48 41" src="https://user-images.githubusercontent.com/38523284/167797095-60897bcf-1569-4580-abab-468b907f8367.png">
