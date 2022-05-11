@@ -8,7 +8,8 @@ CI/CD (Continuous Integration Continuous Deployment) merupakan bagian dari prose
 
 Proses CI/CD mengacu ke SDLC (Software Development Life Cycle) dengan 8 langkah yang membentuk infinity loop karena terus berulang, langkah tersebut diantaranya :
 
-![sdlc](https://user-images.githubusercontent.com/38523284/167798720-936e5172-82b9-4967-bd1c-5f4f6e1a77e2.png)
+<img width="500" alt="Screen Shot 2022-05-11 at 15 08 20" src="https://user-images.githubusercontent.com/38523284/167800689-fb03ef06-e97a-4475-aa1b-4d0ac6756c8d.png">
+
 
 1. Code
 2. Build
