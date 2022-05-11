@@ -1,1 +1,1 @@
-# Deploy aplikasi Laravel di VPS dengan CICD tools lain (gitlabci, github action)
+# Deploy Aplikasi Laravel di VPS dengan CI/CD tools lain (Gitlab CI, Github Action)
