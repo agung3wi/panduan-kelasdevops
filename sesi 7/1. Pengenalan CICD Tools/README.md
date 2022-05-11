@@ -32,15 +32,15 @@ Diklasifikasikan di antara tools CI/CD terbaik yang tersedia saat ini, Jenkins a
 Seperti gitlab CI, github action juga merupakan CI/CD tools bawaan dari github. 
 
 ### 4. AWS CodePipeline
-* [Referensi AWS CodePipeline](https://aws.amazon.com/id/codepipeline/)
+[AWS CodePipeline](https://aws.amazon.com/id/codepipeline/)
 Merupakan salah satu layanan AWS yang dapat membantu dalam pengotomatisasian pembaruan aplikasi dan infrastruktur dengan cepat. Mengotomatisasi fase build, pengujian dan deploy.
 
 ### 5. AWS CodeDeploy
-* [Referensi AWS CodePipeline](https://aws.amazon.com/id/codedeploy/)
+[AWS CodePipeline](https://aws.amazon.com/id/codedeploy/)
 Merupakan layanan AWS yang mengotomatiskan penerapan perangkat lunak untuk berbagai layanan komputasi antara lain Amazon EC2, AWS Fargate, AWS Lambda, dan server yang dijalankan di lokasi
 
 ### 6. AWS CodeBuild
-* [Referensi AWS CodePipeline](https://aws.amazon.com/id/codebuild/)
+[AWS CodePipeline](https://aws.amazon.com/id/codebuild/)
 Merupakan layanan integrasi berkelanjutan yang sepenuhnya terkelola untuk mengompilasi kode sumber, menjalankan pengujian, dan menghasilkan paket perangkat lunak yang siap digunakan
 
 
