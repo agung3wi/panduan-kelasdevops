@@ -7,6 +7,9 @@
 CI/CD (Continuous Integration Continuous Deployment) merupakan bagian dari proses DevOps, yang menekankan konvergensi pengembangan perangkat lunak dan proses operasional untuk membangun jaringan dan jalur aplikasi yang lebih kohesif. CI/CD juga merupakan sebuah trigger yang terdapat didalam SCM (Source Code Management)
 
 Proses CI/CD mengacu ke SDLC (Software Development Life Cycle) dengan 8 langkah yang membentuk infinity loop karena terus berulang, langkah tersebut diantaranya :
+
+![sdlc](https://user-images.githubusercontent.com/38523284/167798720-936e5172-82b9-4967-bd1c-5f4f6e1a77e2.png)
+
 1. Code
 2. Build
 3. Test
