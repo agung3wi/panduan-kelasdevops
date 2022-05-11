@@ -4,9 +4,9 @@
 
 ## Pengertian CI/CD
 
-CI/CD (Continuous Integration Continuous Deployment) merupakan bagian dari proses DevOps, yang menekankan konvergensi pengembangan perangkat lunak dan proses operasional untuk membangun jaringan dan jalur aplikasi yang lebih kohesif.
+CI/CD (Continuous Integration Continuous Deployment) merupakan bagian dari proses DevOps, yang menekankan konvergensi pengembangan perangkat lunak dan proses operasional untuk membangun jaringan dan jalur aplikasi yang lebih kohesif. CI/CD juga merupakan sebuah trigger yang terdapat didalam SCM (Source Code Management)
 
-Proses CI/CD mengacu ke SDLC (Software Development Life Cycle) dengan 8 langkah yang membentuk infinity karena terus berulang, langkah tersebut diantaranya :
+Proses CI/CD mengacu ke SDLC (Software Development Life Cycle) dengan 8 langkah yang membentuk infinity loop karena terus berulang, langkah tersebut diantaranya :
 1. Code
 2. Build
 3. Test
@@ -18,6 +18,7 @@ Proses CI/CD mengacu ke SDLC (Software Development Life Cycle) dengan 8 langkah 
 
 Dengan meningkatnya untuk mengadopsi praktik agile, beberapa tools CI/CD telah banyak dirilis dalam beberapa tahun terakhir. Ini sering menyebabkan kebingungan dan menyulitkan seorang engineer perangkat lunak yang bercita-cita tinggi untuk memilih tools CD CI terbaik untuk dikuasai bagi perkembangan karier.
 
+-----
 
 ## Macam - macam CI/CD yang biasa digunakan :
 
@@ -29,3 +30,25 @@ Diklasifikasikan di antara tools CI/CD terbaik yang tersedia saat ini, Jenkins a
 
 ### 3. Github Action
 Seperti gitlab CI, github action juga merupakan CI/CD tools bawaan dari github. 
+
+### 4. AWS CodePipeline
+* [Referensi AWS CodePipeline](https://aws.amazon.com/id/codepipeline/)
+Merupakan salah satu layanan AWS yang dapat membantu dalam pengotomatisasian pembaruan aplikasi dan infrastruktur dengan cepat. Mengotomatisasi fase build, pengujian dan deploy.
+
+### 5. AWS CodeDeploy
+* [Referensi AWS CodePipeline](https://aws.amazon.com/id/codedeploy/)
+Merupakan layanan AWS yang mengotomatiskan penerapan perangkat lunak untuk berbagai layanan komputasi antara lain Amazon EC2, AWS Fargate, AWS Lambda, dan server yang dijalankan di lokasi
+
+### 6. AWS CodeBuild
+* [Referensi AWS CodePipeline](https://aws.amazon.com/id/codebuild/)
+Merupakan layanan integrasi berkelanjutan yang sepenuhnya terkelola untuk mengompilasi kode sumber, menjalankan pengujian, dan menghasilkan paket perangkat lunak yang siap digunakan
+
+
+-----
+
+## Istilah yang perlu diketahui
+### 1. SCM (Source Code Management)
+Merupakan salah satu tools yang digunakan sebagai lokasi penyimpanan script code, jadi developer dapat saling berkolaborasi dalam proses developing aplikasi
+
+### 2. Pipeline
+Merupakan suatu cara yang digunakan untuk melakukan sejumlah kerja secara bersamaan tetapi dalam tahap yang berbeda yang dialirkan secara kontiniu pada unit pemrosesan 
