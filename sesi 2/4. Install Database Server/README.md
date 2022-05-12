@@ -24,7 +24,7 @@ mysql -u root
 
 #### Membuat User MySQL dan mengatur privileges
 ```
-CREATE USER 'username'@'host' IDENTIFIED WITH BY 'password';
+CREATE USER 'username'@'host' IDENTIFIED BY 'password';
 ```
 > **contoh** : `CREATE USER 'bambang'@'%' IDENTIFIED BY 'inipasswordnya';`
 
