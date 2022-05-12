@@ -1,4 +1,4 @@
-# Install & konfigurasi Firewall
+# Install & konfigurasi Nodejs di Server
 
 ### Instalasi node.js di Ubuntu
 ```
