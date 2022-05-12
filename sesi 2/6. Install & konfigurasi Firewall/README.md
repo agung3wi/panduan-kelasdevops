@@ -131,6 +131,7 @@ server {
           proxy_set_header X-Forwarded-Port  $server_port;
         }
 
+	listen 80;
         listen [::]:80;
 }
 ```
