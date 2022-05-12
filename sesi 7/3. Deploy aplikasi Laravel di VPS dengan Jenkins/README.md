@@ -56,7 +56,8 @@
 
        // deploy env dev
        stage("Build"){
-           docker.image('composer:latest').inside('-u root') {
+           docker.image('shippingdocker/php-composer:7.4').inside('-u root') {
+               sh 'rm composer.lock'
                sh 'composer install'
            }
        }
@@ -87,4 +88,6 @@
    
    <img width="220" alt="Screen Shot 2022-05-12 at 14 25 55" src="https://user-images.githubusercontent.com/38523284/168022982-5ed22e53-2ae5-4a2f-9556-994a3661e3f0.png">
 
-4. 
+4. Pada side menu detail build, klik console output nya untuk melihat detail proses dari buildnya
+   
+   <img width="220" alt="Screen Shot 2022-05-12 at 15 10 23" src="https://user-images.githubusercontent.com/38523284/168023780-9a13a7fc-df06-4155-bf4f-1227f7a1ac55.png">
