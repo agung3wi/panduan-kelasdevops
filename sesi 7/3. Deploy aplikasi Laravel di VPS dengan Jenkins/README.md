@@ -91,3 +91,5 @@
 4. Pada side menu detail build, klik console output nya untuk melihat detail proses dari buildnya
    
    <img width="220" alt="Screen Shot 2022-05-12 at 15 10 23" src="https://user-images.githubusercontent.com/38523284/168023780-9a13a7fc-df06-4155-bf4f-1227f7a1ac55.png">
+
+5. Siapkan 2 host yaitu untuk development dan production
