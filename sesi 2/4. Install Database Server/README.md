@@ -28,9 +28,15 @@ CREATE USER 'username'@'host' IDENTIFIED BY 'password';
 ```
 > **contoh** : `CREATE USER 'bambang'@'%' IDENTIFIED BY 'inipasswordnya';`
 
+Untuk mengatur membuat database
+```
+CREATE database nama_database;
+```
+> **contoh** : `CREATE USER 'bambang'@'%' IDENTIFIED BY 'inipasswordnya';`
+
 Untuk mengatur privileges user
 ```
-GRANT PRIVILEGE ON database.table TO 'username'@'host';
+GRANT ALL PRIVILEGES ON database.table TO 'username'@'host';
 ```
 
 #### Mengamankan nginx dengan Let’s Encrypt
