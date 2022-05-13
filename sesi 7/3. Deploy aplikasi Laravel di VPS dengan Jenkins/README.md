@@ -182,4 +182,4 @@
    ```
    http://JENKINS_URL/generic-webhook-trigger/invoke?token=TOKEN_JENKINS
    ```
-   `token` diisikan dengan Token yang ada di Configurasi Pipeline -> `http://54.151.151.148:8080/generic-webhook-trigger/invoke?token=deploy-laravel-dev`
+   `token` diisikan dengan Token yang ada di Configurasi Pipeline, dan Jenkins_URL diisikan dengan link jenkins -> `http://54.151.151.148:8080/generic-webhook-trigger/invoke?token=deploy-laravel-dev`
