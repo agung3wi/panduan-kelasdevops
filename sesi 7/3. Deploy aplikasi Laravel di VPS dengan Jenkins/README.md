@@ -168,3 +168,21 @@
     ```
     php artisan migrate
     ```
+
+## Cara Build Pipeline secara Otomatis
+
+1. Sebelumnya perlu dilakukan konfigurasi lagi pada pipeline-nya, dengan cara akses ke menu Configure > di Build Trigger checklis pada `Generic Webhook Trigger` > Isikan Token (diisi sesuai yang diinginkan)
+   
+   <img width="350" alt="Screen Shot 2022-05-13 at 16 52 49" src="https://user-images.githubusercontent.com/38523284/168259324-180be710-0374-451b-9e1a-a2a49b515b5f.png">
+
+   <img width="750" alt="Screen Shot 2022-05-13 at 16 54 13" src="https://user-images.githubusercontent.com/38523284/168259539-f4a7655f-2b0d-4fe9-9a46-cb5260c94591.png">
+
+2. Kemudian kita setting automatisasi di Github. Akses ke Settings > Webhooks > Add Webhooks.
+   Isikan `Payload URL` dengan ketentuan link berikut :
+   ```
+   http://JENKINS_URL/generic-webhook-trigger/invoke?token=
+   ```
+   `token` diisikan dengan Token yang ada di Configurasi Pipeline -> http://JENKINS_URL/generic-webhook-trigger/invoke?token=deploy-laravel-dev
+   
+   
+   
