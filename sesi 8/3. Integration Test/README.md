@@ -26,5 +26,6 @@ public function test_create_data_masuk()
 ```
 
 4.  Jalankan dengan command `php artisan test --testsuite=Featur `. Dan hasilnya sebagai berikut:
+![image](https://user-images.githubusercontent.com/68054503/168595792-e32ea0fd-5b5c-465f-a3dd-9de00d78592d.png)
 
 
