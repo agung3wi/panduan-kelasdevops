@@ -1,4 +1,4 @@
-# Install & konfigurasi Firewall
+# Install & konfigurasi Nodejs di Server
 
 ### Instalasi node.js di Ubuntu
 ```
@@ -72,36 +72,23 @@ host:3000
 sudo apt install supervisor
 ```
 
-8. Menambahkan konfigurasi idle.sh. Tambahkan script berikut ke idle.sh  `nano ~/idle.sh`
-```
-#!/bin/bash
-while true
-do 
-	# Echo current date to stdout
-	echo `date`
-	# Echo 'error!' to stderr
-	echo 'error!' >&2
-	sleep 1
-done
-```
-
-9. File Konfigurasi untuk supervisor biasanya berada di `/etc/supervisor/conf.d`. 
+8. File Konfigurasi untuk supervisor biasanya berada di `/etc/supervisor/conf.d`. 
 > Format file .conf
 ```
-sudo nano /etc/supervisor/conf.d/idle.conf
+sudo nano /etc/supervisor/conf.d/nodejs.conf
 ```
 Tambahkan script berikut :
 ```
 [program:nodejs]
-user=agung
-command=node /home/agung/nodejs.kelasdevops.xyz/server.js
+user=ubuntu
+command=node /home/ubuntu/nodejs.kelasdevops.xyz/server.js
 autostart=true
 autorestart=true
-stderr_logfile=/var/log/idle.err.log
-stdout_logfile=/var/log/idle.out.log
+stderr_logfile=/var/log/nodejs.err.log
+stdout_logfile=/var/log/nodejs.out.log
 ```
 
-10. Start supervisor
+9. Start supervisor
 ```
 sudo supervisorctl reread
 ```
@@ -112,28 +99,29 @@ sudo supervisorctl update
 sudo supervisorctl start nodejs
 ```
 
-11. Buat konfigurasi di **/etc/nginx/sites-enabled/** untuk project nodejs
+10. Buat konfigurasi di **/etc/nginx/sites-enabled/** untuk project nodejs
 ```
 server {
-        root /home/agung/nodejs/public;
-        server_name nodejs.kelasdevops.xyz;
+    root /home/ubuntu/nodejs.kelasdevops.xyz/public;
+    server_name nodejs.kelasdevops.xyz;
 
-        location / {
-          proxy_pass http://127.0.0.1:3000;
+    location / {
+        proxy_pass http://127.0.0.1:3000/;
 
-          proxy_set_header Upgrade           $http_upgrade;
-          proxy_set_header Connection        "upgrade";
-          proxy_set_header Host              $host;
-          proxy_set_header X-Real-IP         $remote_addr;
-          proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
-          proxy_set_header X-Forwarded-Proto $scheme;
-          proxy_set_header X-Forwarded-Host  $host;
-          proxy_set_header X-Forwarded-Port  $server_port;
-        }
+        proxy_set_header Upgrade           $http_upgrade;
+        proxy_set_header Connection        "upgrade";
+        proxy_set_header Host              $host;
+        proxy_set_header X-Real-IP         $remote_addr;
+        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host  $host;
+        proxy_set_header X-Forwarded-Port  $server_port;
+    }
 
-        listen [::]:80;
+    listen 80;
+    listen [::]:80;
 }
 ```
 
-12. Tambahkan DNS record  
+11. Tambahkan DNS record nodejs.kelasdevops.xyz A record mengarah ke IP Address Server.
 
