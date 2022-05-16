@@ -85,11 +85,3 @@ Untuk menjalankan test nya menggunakan command berikut :
 ```
 php artisan test
 ```
-
-
-
-
-
-### Contoh Implementasi Testing - Feature
-1. Pertama, buat test **PelangganTest** menggunakan command `php artisan make:test PelangganTest`
-2. 

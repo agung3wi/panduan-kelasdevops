@@ -1,5 +1,6 @@
 # Unit Test
 
+
 #### Membuat Test Case
 Untuk membuat test case baru menggunakan command berikut (secara default test case ini terletak pada folder **tests/Feature**)
 ```
@@ -11,7 +12,7 @@ Jika ingin membuat test case pada folder tests/Unit, tambahkan `--unit` pada com
 php artisan make:test UserTest --unit
 ```
 
-### Contoh Implementasi Testing - Unit 
+### Contoh Implementasi Unit Test
 1. Pertama, buat test **MathPowerTest** menggunakan command `php artisan make:test MathPowerTest --unit`
 2. Pada contoh ini, akan dibuat dua method yang mana method `test_bilangan_positif` dengan hasil true dan method `test_bilangan_negatif` dengan hasil false. Masukan script berikut ke test MathPowerTest
 ```
