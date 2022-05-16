@@ -1,5 +1,7 @@
 # Integration Test
 
+> Merupakan pengujian apakah gabungan dari bagian (fungsi) dari sebuah aplikasi atau system dapat bekerja sama dengan benar. Contoh sederhana ketika saat upload dan mengirim gambar apakah tampilan gambar yng dikirim sesuai dengan gambar yang diupload tadi.
+
 ### Contoh Implementasi Integration Test
 1. Pertama, buat test **PelangganTest** menggunakan command `php artisan make:test PelangganTest`
 2. Buka file **PelangganTest.php** pada folder **tests/Feature/PelangganTest.php**

@@ -1,5 +1,6 @@
 # Unit Test
 
+> Merupakan pengujian bagian terkecil dari sebuah code, bagian terkecil ini adalah bisa sebuah fungsi, module atau class dari sistem tersebut. ini dilakukan bertujuan untuk memastikan dapat berjalan sesuai yang diharapkan.
 
 #### Membuat Test Case
 Untuk membuat test case baru menggunakan command berikut (secara default test case ini terletak pada folder **tests/Feature**)
