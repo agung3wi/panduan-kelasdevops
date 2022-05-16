@@ -67,3 +67,4 @@ class MathHelper
 ```
 
 4.  Jalankan dengan command `php artisan test`. Dan hasilnya sebagai berikut:
+![php artisan test result](https://user-images.githubusercontent.com/68054503/168524527-99000e20-2f34-42f8-bd0f-975472f4cf54.PNG)
