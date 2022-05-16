@@ -100,10 +100,21 @@ Command untuk menghapus file dalam direktori atau direktori.
 ```
 chmod
 ```
-Command untuk mengganti izin akses terhadap suatu file atau direktori. Urutan perintahnya adalah **chmod opsi_izin_akses nama_file**. Contoh: *chmod 744 script.sh*
+Perintah dasar Linux lainnya yang digunakan untuk membaca, menulis, dan menjalankan permission (hak akses) file dan direktori. Urutan perintahnya adalah **chmod opsi_izin_akses nama_file**. Contoh: *chmod 744 script.sh*
 - Angka pertama untuk pengguna yang terkait dengan file.
 - Angka kedua untuk group yang terkait dengan file.
 - Angka ketiga untuk semua yang bukan merupakan bagian dari user atau grup.
+
+Octal Notation | Permission | Symbolic Representation
+--- | --- | ---
+0 |	No Permission	| ---
+1	| Execute Permission Only	| --x
+2	| Write Permission Only	| -w-
+3	| Write and Execute Permissions (1+2)=3 |	-wx
+4	| Read Permission Only	| r--
+5	| Read and Execute Permissions (1+4)=5 |	r-x
+6	| Read and Write Permissions (2+4)=6 |	rw-
+7	| Read, Write and Execute Permissions, Means Full Permissions (1+2+4)=7 |	rwx
 
 Lebih lanjut mengenai chmod silahkan baca [disini] (https://www.computerhope.com/unix/uchmod.htm)
 
