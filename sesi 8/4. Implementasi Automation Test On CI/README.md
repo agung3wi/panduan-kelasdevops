@@ -31,9 +31,12 @@ stage("Test") {
 2. Kemudian buka Jenkins dan build ulang project
 ![8-build](https://user-images.githubusercontent.com/68054503/168617366-ae807f73-d656-445d-b6fe-0a89d3bdf588.png)
 
+
 3. Pantau console log
 **Unit test**
 ![8-testing result](https://user-images.githubusercontent.com/68054503/168617417-9a843dc0-d243-4636-8fcc-6c2f7cff9ea7.png)
+
+
 
 **Feature test**
 ![8-testing result 2](https://user-images.githubusercontent.com/68054503/168617466-06e11278-d628-43d6-a4fc-c850a9dca070.png)
@@ -41,4 +44,5 @@ stage("Test") {
 
 
 > Apabila gagal pada saat test maka tidak akan dilanjutkan pada stage berikutnya.
+
 ![8-stage view](https://user-images.githubusercontent.com/68054503/168617681-7a121633-9d18-4b10-97c2-cdea2fdd82b0.png)
