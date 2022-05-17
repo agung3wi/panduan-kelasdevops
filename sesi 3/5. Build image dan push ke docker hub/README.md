@@ -6,11 +6,11 @@
      ```
      mkdir php
      ```
-  2. Membuat file DockerFile
+  2. Membuat file Dockerfile
      ```
-     nano DockerFile
+     nano Dockerfile
      ```
-  3. Isikan script berikut kedalam DockerFile dan simpan
+  3. Isikan script berikut kedalam Dockerfile dan simpan
      ```
      FROM php:7.4-apache
      WORKDIR /var/www/html
