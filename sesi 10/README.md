@@ -1,4 +1,4 @@
-Log & Permorfamnce Monitoring
+Log & Permorfmance Monitoring
 ========================
 
 Materi yang akan dipelajari pada sesi ini sebagai berikut:
