@@ -29,14 +29,14 @@
                php-version: "7-4"
             - uses: "ramsey/composer-install@v1"
               with:
-               composer-options: "--working-dir=backend"
+               composer-options: ""
             - name: Sync
               env:
-               dest: "ubuntu@${{secrets.HOST}}:~/prod.kelasdevops.xyz/"
+               dest: "ubuntu@54.251.5.36:~/prod.kelasdevops.xyz/"
               run:
                echo "${{secrets.DEPLOY_KEY}}" > ~/deploy_key
                chmod 600 ~/deploy_key
-               cd backend && rsync -chav --delete \
+               rsync -chav --delete \
                   -e 'ssh -i ~/deploy_key -o StrictHostKeyChecking=no' \
                   --exclude ~/deploy_key \
                   --exclude .git/ \
@@ -56,3 +56,9 @@
    Pada variable DEPLOY_KEY, value nya adalah private key SSH, yang dapat diakses dengan perintah `cat ~/prod` di terminal
    
    <img width="600" alt="Screen Shot 2022-05-13 at 18 58 04" src="https://user-images.githubusercontent.com/38523284/168278877-4a8bf4df-68cb-46e9-8b80-aa711712c23f.png">
+
+7. Kemudian kembali ke tab menu `Action` untuk melihat workflow
+8. Tunggu proses workflow sampai finish / success akan ada centang hijau, seperti gambar berikut
+   
+   <img width="716" alt="Screen Shot 2022-05-17 at 09 07 48" src="https://user-images.githubusercontent.com/38523284/168713801-d80e209a-3f94-4b97-9435-22525ff86f33.png">
+
