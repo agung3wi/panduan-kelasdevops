@@ -12,7 +12,7 @@
      ```
   7. Selanjutnya run docker image yang sudah dibuat dari lokal
      ```
-     docker run --name go-app -p 8000:8000 go-app
+     docker run --name go-app -p 8000:8000 -e APP_NAME=go -d go-app
      ```
      
 ## Push ke Docker Hub
@@ -37,5 +37,5 @@
      ```
  4. Perintah menjalankan image docker melalui docker hub
      ```
-     docker run --name go-app -p 8000:8000 -d <username_docker_hub>/go-app:v1
+     docker run --name go-app -p 8000:8000 -e APP_NAME=go -d <username_docker_hub>/go-app:v1
      ```
