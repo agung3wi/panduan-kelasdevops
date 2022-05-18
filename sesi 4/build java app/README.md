@@ -12,7 +12,7 @@
      ```
   7. Selanjutnya run docker image yang sudah dibuat dari lokal
      ```
-     docker run --name java-app -p 8080:8080 java-app
+     docker run --name java-app -p 8080:8080 -e APP_NAME=java -d java-app
      ```
      
 ## Push ke Docker Hub
@@ -33,9 +33,9 @@
      ```
  3. Setelah login, kita lakukan push dengan perintah :
      ```
-     docker push <username_docker_hub>/java-app:v1 .
+     docker push <username_docker_hub>/java-app:v1
      ```
  4. Perintah menjalankan image docker melalui docker hub
      ```
-     docker run --name java-app -p 8080:8080 -d <username_docker_hub>/java-app:v1
+     docker run --name java-app -p 8080:8080 -e APP_NAME=java -d <username_docker_hub>/java-app:v1
      ```
