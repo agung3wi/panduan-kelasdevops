@@ -4,7 +4,7 @@
 
   1. Build docker image dengan perintah berikut
      ```
-     docker build -t go-app .
+     docker build -t php-app .
      ```
   6. Jika sudah berhasil ter-build, kita cek imagenya
      ```
@@ -12,7 +12,7 @@
      ```
   7. Selanjutnya run docker image yang sudah dibuat dari lokal
      ```
-     docker run --name go-app -p 80:80 go-app
+     docker run --name php-app -p 80:80 php-app
      ```
      
 ## Push ke Docker Hub
@@ -25,17 +25,17 @@
      ```
  2. Tambahkan tag kedalam Docker image
      ```
-     docker tag go-app <username_docker_hub>/go-app:v1
+     docker tag php-app <username_docker_hub>/php-app:v1
      ```
      atau bisa ditambahkan saat proses build docker image secara langsung
      ```
-     docker build -t <username_docker_hub>/go-app:v1 .
+     docker build -t <username_docker_hub>/php-app:v1 .
      ```
  3. Setelah login, kita lakukan push dengan perintah :
      ```
-     docker push <username_docker_hub>/go-app:v1 .
+     docker push <username_docker_hub>/php-app:v1 .
      ```
  4. Perintah menjalankan image docker melalui docker hub
      ```
-     docker run --name go-app -p 80:80 -d <username_docker_hub>/go-app:v1
+     docker run --name php-app -p 80:80 -d <username_docker_hub>/php-app:v1
      ```
