@@ -12,7 +12,7 @@
      ```
   7. Selanjutnya run docker image yang sudah dibuat dari lokal
      ```
-     docker run --name node-app -p 3000:3000 node-app
+     docker run --name node-app -p 3000:3000 -e APP_NAME=node -d node-app
      ```
      
 ## Push ke Docker Hub
@@ -33,9 +33,9 @@
      ```
  3. Setelah login, kita lakukan push dengan perintah :
      ```
-     docker push <username_docker_hub>/node-app:v1 .
+     docker push <username_docker_hub>/node-app:v1
      ```
  4. Perintah menjalankan image docker melalui docker hub
      ```
-     docker run --name node-app -p 3000:3000 -d <username_docker_hub>/node-app:v1
+     docker run --name node-app -p 3000:3000 -e APP_NAME=node -d <username_docker_hub>/node-app:v1
      ```
