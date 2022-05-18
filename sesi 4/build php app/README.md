@@ -12,7 +12,7 @@
      ```
   7. Selanjutnya run docker image yang sudah dibuat dari lokal
      ```
-     docker run --name php-app -p 80:80 php-app
+     docker run --name php-app -p 8000:80 -e APP_NAME=php -d php-app
      ```
      
 ## Push ke Docker Hub
@@ -37,5 +37,5 @@
      ```
  4. Perintah menjalankan image docker melalui docker hub
      ```
-     docker run --name php-app -p 80:80 -d <username_docker_hub>/php-app:v1
+     docker run --name php-app -p 8000:80 -d -e APP_NAME=php <username_docker_hub>/php-app:v1
      ```
