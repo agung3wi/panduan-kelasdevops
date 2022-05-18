@@ -33,7 +33,7 @@
      ```
  3. Setelah login, kita lakukan push dengan perintah :
      ```
-     docker push <username_docker_hub>/php-app:v1 .
+     docker push <username_docker_hub>/php-app:v1
      ```
  4. Perintah menjalankan image docker melalui docker hub
      ```
