@@ -1,9 +1,13 @@
 # Inisialisasi Backing Service
 
-Untuk menyiapkan backing service bisa mengcopy dari docker-compose.yml dari konten berikut
 
+1. Buat file baru dengan nama docker-compose.yml
+```
+nano docker-compose.yml
+```
+Isikan kontent dari [docker-compose.yml](https://raw.githubusercontent.com/agung3wi/panduan-kelasdevops/master/sesi%205/3.%20inisialisasi%20backing%20service/docker-compose.yml) berikut, kemudian simpan.
 
-Kemudian jalankan
+2. Kemudian jalankan
 ```
 docker-compose up -d
 ```
