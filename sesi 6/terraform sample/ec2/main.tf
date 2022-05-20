@@ -53,7 +53,7 @@ resource "aws_security_group_rule" "incoming" {
 }
 
 resource "aws_instance" "ec2" {
-  count = 1
+  count = 3
   ami           = "ami-0750a20e9959e44ff" # ubuntu 20.04 region singapura
   instance_type = "t2.micro"
   key_name = "${aws_key_pair.keypair_demo.key_name}"

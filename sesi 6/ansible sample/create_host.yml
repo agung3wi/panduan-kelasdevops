@@ -1,0 +1,24 @@
+- hosts: prod
+  become: yes
+  vars:
+    domain: prod.kelasdevops.xyz
+    user: ubuntu
+  tasks:
+    - name: "create  directory"
+      file:
+        path: /home/{{ user }}/{{ domain }}/public
+        state: directory
+        mode: "0775"
+        owner: "{{ user }}"
+        group: "{{ user }}"
+
+    - name: copy nginx site.conf
+      template:
+        src: site.conf.j2
+        dest: /etc/nginx/sites-enabled/{{ domain }}
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Restart nginx
+      command: "sudo service nginx restart"

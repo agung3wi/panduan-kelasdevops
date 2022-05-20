@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: copy Docker Compose
+      copy:
+        src: ./mysql.yml
+        dest: /root/mysql.yml
+
+    # use files parameter to use multiple docker-compose.yml files
+    - name: deploy Docker Compose stack
+      become_user: root
+      command: docker-compose -f /root/mysql.yml up -d

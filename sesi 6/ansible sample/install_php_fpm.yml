@@ -1,0 +1,62 @@
+---
+- hosts: all
+  become: true
+  vars:
+    php_version: 7.4
+    php_modules:
+      - mysql
+      - pgsql
+      - curl
+      - mbstring
+      - xml
+      - zip
+      - gd
+    php_fpm_pools:
+      - name: blog
+        pm_max_children: 10
+        pm_start_servers: 4
+        pm_min_spare_servers: 2
+        pm_max_spare_servers: 6
+    php_fpm_ini_options:
+      - { option: post_max_size, value: 100M }
+      - { option: upload_max_filesize, value: 100M }
+      - { section: opcache, option: opcache.enable, value: 1 }
+      - { option: max_execution_time, value: 1000 }
+      - { option: max_input_time, value: 10000 }
+      - { option: max_input_vars, value: 10000 }
+      - { option: memory_limit, value: 128M }
+      - { option: post_max_size, value: 12M }
+      - { option: session.gc_maxlifetime, value: 1440 }
+      - { option: upload_max_filesize, value: 40M }
+  tasks:
+    - name: Install PHP-FPM
+      apt:
+        name:
+          - "php7.4-fpm"
+      tags: php-fpm.install
+
+    - name: Install PHP modules
+      apt:
+        name: "php7.4-{{ item }}"
+      with_items: "{{ php_modules }}"
+      tags: php-fpm.install
+
+    - name: Set PHP options for FPM
+      ini_file:
+        path: /etc/php/7.4/fpm/php.ini
+        section: "{{ item.section | default('PHP') }}"
+        option: "{{ item.option }}"
+        value: "{{ item.value }}"
+        state: "{{ item.state | default('present') }}"
+      with_items: "{{ php_fpm_ini_options }}"
+      tags: php-fpm.options
+
+    - name: Enable and start PHP-FPM service
+      systemd:
+        name: "php7.4-fpm.service"
+        enabled: true
+        state: started
+      tags: php-fpm.install
+
+    - name: restart php fpm
+      command: sudo service php7.4-fpm restart
