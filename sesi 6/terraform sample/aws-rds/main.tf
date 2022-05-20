@@ -10,7 +10,7 @@ terraform {
 
 provider "aws" {
   profile = "default"
-  region = "us-east-1"
+  region = "ap-southeast-1"
 }
 
 resource "aws_db_instance" "default" {
@@ -22,5 +22,6 @@ resource "aws_db_instance" "default" {
   username             = "foo"
   password             = "foobarbaz"
   parameter_group_name = "default.mysql5.7"
+  publicly_accessible = true
   skip_final_snapshot  = true
 }
