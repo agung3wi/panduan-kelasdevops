@@ -1,5 +1,6 @@
 # Menambahkan APM Agent untuk Laravel aplikasi
 
+* [Kumpulan Dokumentasi Instalasi APM Agent](https://www.elastic.co/guide/en/apm/agent/index.html)
 * [Referensi APM pada Laravel](https://github.com/arkaitzgarro/elastic-apm-laravel)
 * [Gitlab Repo](https://gitlab.com/agung3wi/devopsapril-laravel)
 * [Github Repo](https://github.com/agung3wi/devopsapril-laravel)
