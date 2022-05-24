@@ -14,3 +14,12 @@
    ```
    kubectl apply -f 01_deployment.yml
    ```
+3. Pastikan `pod` nya sudah terganti / memiliki status `running` semua, yang dapat di cek menggunakan perintah berikut
+   ```
+   kubectl get pod
+   ```
+   
+   Sampai menjadi seperti gambar berikut, status menunjukan `running` semua
+   
+   <img width="800" alt="Screen Shot 2022-05-25 at 00 15 31" src="https://user-images.githubusercontent.com/38523284/170094171-ea807e76-6e6f-42b7-b087-80a26f8e8e74.png">
+
