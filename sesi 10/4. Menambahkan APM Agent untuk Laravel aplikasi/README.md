@@ -1,3 +1,29 @@
 # Menambahkan APM Agent untuk Laravel aplikasi
 
-================
+[Referensi APM pada Laravel](https://github.com/arkaitzgarro/elastic-apm-laravel)
+
+## Prasyarat
+
+Terlebih dahulu install `guzzle` sebelum memulai menggunakan APM Agent
+```
+composer require php-http/guzzle7-adapter
+```
+
+## Instalasi   
+
+1. Install composer
+   - Laravel 6+
+     ```
+     composer require arkaitzgarro/elastic-apm-laravel
+     ```
+2. Kemudian didaftarkan ke `config/app.php`
+   ```
+   'providers' => [
+        // ... more providers
+        \AG\ElasticApmLaravel\ServiceProvider::class,
+    ],
+   ```
+3. Selanjutnya di publish supaya dapat config dari ElasticEPM Laravel nya
+   ```
+   php artisan vendor:publish --tag=config
+   ```
