@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: laravel
+  name: laravel
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: laravel
+  template:
+    metadata:
+      labels:
+        app: laravel
+    spec:
+      containers:
+        - image: devopsmei/laravel:v1
+          env:
+            - name: APP_NAME
+              value: Laravel
+            - name: APP_ENV
+              value: local
+            - name: APP_DEBUG
+              value: "false"
+            - name: APP_KEY
+              value: "base64:xYPaME/4NNcy/wfshBLPyjVYRgXOMxCLIJEeB8B21E4="
+            - name: DB_CONNECTION
+              value: mysql
+            - name: DB_HOST
+              value: "mysql"
+            - name: DB_PORT
+              value: "3306"
+            - name: DB_DATABASE
+              value: "test"
+            - name: DB_USERNAME
+              value: "test"
+            - name: DB_PASSWORD
+              value: "test123"
+            - name: SESSION_DRIVER
+              value: "redis"
+            - name: REDIS_HOST
+              value: "redis"
+            - name: REDIS_PASSWORD
+              value: "123456"
+            - name: REDIS_PORT
+              value: "6379"
+            - name: MINO_ACCESS_KEY_ID
+              value: minio
+            - name: MINIO_SECRET_ACCESS_KEY
+              value: minio123
+            - name: MINIO_BUCKET
+              value: laravel
+            - name: MINIO_URL
+              value: "http://minio:9000"
+            - name: MINIO_ENDPOINT
+              value: "http://minio:9000"
+          name: laravel
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: 250m
+            requests:
+              cpu: 100m
+      restartPolicy: Always
