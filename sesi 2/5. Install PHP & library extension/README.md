@@ -4,7 +4,7 @@
 
 #### Instalasi PHP Apache
 1. Masuk ke root `sudo su`
-2. Install repository `ppa:ondrej/php`.  
+2. Install repository `ppa:ondrej/php` untuk ubuntu 20.04 kebawah.  
 ```
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
