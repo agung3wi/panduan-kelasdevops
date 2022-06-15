@@ -6,11 +6,11 @@
      ```
      docker build -t node-app .
      ```
-  6. Jika sudah berhasil ter-build, kita cek imagenya
+  2. Jika sudah berhasil ter-build, kita cek imagenya
      ```
      docker images
      ```
-  7. Selanjutnya run docker image yang sudah dibuat dari lokal
+  3. Selanjutnya run docker image yang sudah dibuat dari lokal
      ```
      docker run --name node-app -p 3000:3000 -e APP_NAME=node -d node-app
      ```
