@@ -1,0 +1,16 @@
+- hosts: prod
+  become: yes
+  vars:
+    domain: prod.kelasdevops.xyz
+    user: ubuntu
+  tasks:
+    - name: "remove directory /home/ubuntu/{{domain}}"
+      command: "rm -Rf /home/ubuntu/{{domain}}"
+
+    - name: "cloning dari github"
+      command: "git clone https://github.com/teknoaplikasi/bootcamp-laravel {{domain}}"
+      become_user: ubuntu
+
+    - name: "set 777 folder storage"
+      command: "chmod 777 -R  /home/ubuntu/{{domain}}/storage"
+      become_user: ubuntu
