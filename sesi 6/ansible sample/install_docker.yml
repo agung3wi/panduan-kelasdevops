@@ -1,5 +1,5 @@
 ---
-- hosts: dev
+- hosts: all
   become: yes
   vars:
     docker_compose_version: "1.27.4"
