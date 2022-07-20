@@ -32,11 +32,11 @@
                composer-options: ""
             - name: Sync
               env:
-               dest: "ubuntu@54.251.5.36:~/prod.kelasdevops.xyz/"
-              run:
-               echo "${{secrets.DEPLOY_KEY}}" > ~/deploy_key
-               chmod 600 ~/deploy_key
-               rsync -chav --delete \
+                dest: "ubuntu@54.251.5.36:~/prod.kelasdevops.xyz/"
+              run: |
+                echo "${{secrets.DEPLOY_KEY}}" > ~/deploy_key
+                chmod 600 ~/deploy_key
+                rsync -chav --delete \
                   -e 'ssh -i ~/deploy_key -o StrictHostKeyChecking=no' \
                   --exclude ~/deploy_key \
                   --exclude .git/ \
