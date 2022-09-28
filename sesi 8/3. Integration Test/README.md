@@ -19,7 +19,7 @@ public function test_create_data_masuk()
         "alamat" => "Semarang"
     ]);
     $countAkhir = Pelanggan::count(); // Menghitung jumlah data akhir (setelah penambahan data)
-    $this->assertTrue($countAkhir == $countAkhir + 1);
+    $this->assertTrue($countAkhir == $countAwal + 1);
 
     DB::rollBack(); // Menghapus data testing
 }
