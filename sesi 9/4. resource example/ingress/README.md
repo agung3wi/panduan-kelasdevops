@@ -6,6 +6,11 @@ helm repo update
 helm install ingress-controller ingress-nginx/ingress-nginx
 ```
 
+Untuk Case di AWS EKS install ingress nginx dapat dilakukan dengan 
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-0.32.0/deploy/static/provider/aws/deploy.yaml
+```
+
 
 ### Install Cert Manager
 ```
