@@ -1,18 +1,23 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: app-ingress
+  name: minio-ingress
   annotations:
     kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-production
 spec:
+  tls:
+    - hosts:
+        - minio-admin.kelasdevops.xyz
+      secretName: mino-tls
   rules:
-    - host: laravel-app.kelasdevops.xyz
+    - host: minio-admin.kelasdevops.xyz
       http:
         paths:
           - pathType: Prefix
             path: "/"
             backend:
               service:
-                name: laravel
+                name: minio
                 port:
-                  number: 80
+                  number: 9001

@@ -5,7 +5,7 @@ metadata:
     app: laravel
   name: laravel
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: laravel
@@ -15,12 +15,14 @@ spec:
         app: laravel
     spec:
       containers:
-        - image: devopsmei/laravel:v1
+        - image: devopsdesember/laravel-app
           env:
             - name: APP_NAME
               value: Laravel
             - name: APP_ENV
-              value: local
+              value: production
+            - name: FORCE_HTTPS
+              value: "true"
             - name: APP_DEBUG
               value: "false"
             - name: APP_KEY
@@ -37,6 +39,8 @@ spec:
               value: "test"
             - name: DB_PASSWORD
               value: "test123"
+            - name: FILESYSTEM_DRIVER
+              value: "minio"
             - name: SESSION_DRIVER
               value: "redis"
             - name: REDIS_HOST
@@ -45,10 +49,12 @@ spec:
               value: "123456"
             - name: REDIS_PORT
               value: "6379"
-            - name: MINO_ACCESS_KEY_ID
+            - name: MINIO_ACCESS_KEY_ID
               value: minio
             - name: MINIO_SECRET_ACCESS_KEY
               value: minio123
+            - name: MINIO_DEFAULT_REGION
+              value: us-east-1
             - name: MINIO_BUCKET
               value: laravel
             - name: MINIO_URL

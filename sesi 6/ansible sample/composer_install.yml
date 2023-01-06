@@ -1,0 +1,13 @@
+- hosts: prod
+  vars:
+    domain: prod.kelasdevops.xyz
+    user: ubuntu
+  tasks:
+    - name: "run composer install"
+      command: "bash -c 'cd ~/{{domain}} && composer install'"
+
+    - name: "cp .env.example .env"
+      command: "cp /home/{{user}}/{{domain}}/.env.example /home/{{user}}/{{domain}}/.env"
+
+    - name: "key generate"
+      command: "bash -c 'cd ~/{{domain}} && php artisan key:generate'"
